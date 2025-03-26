@@ -9,16 +9,24 @@
 </head>
 <body>
     <div class="login-container">
-        <form id="loginForm" onsubmit="return validateLogin(event)">
-            <h2>Login</h2>
-            <div class="input-group">
-                <input type="text" id="username" required placeholder="Username">
+        <div class="login-box">
+            <div class="login-header">
+                <img src="vox/voxlogo.png" alt="Voxurbia Logo" class="logo">
+                <h2>Admin Login</h2>
             </div>
-            <div class="input-group">
-                <input type="password" id="password" required placeholder="Password">
+            <form id="loginForm" onsubmit="return validateLogin(event)">
+                <div class="input-group">
+                    <input type="text" id="username" required placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required placeholder="Password">
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <div class="back-to-site">
+                <a href="index.html" class="back-btn">Back to Website</a>
             </div>
-            <button type="submit">Login</button>
-        </form>
+        </div>
     </div>
 </body>
 </html>

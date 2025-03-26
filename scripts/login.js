@@ -9,10 +9,8 @@ function validateLogin(event) {
         window.location.href = 'vox/admin/dashboard.html';
     } else {
         sessionStorage.setItem('isAdmin', 'false');
-        alert('Invalid username or password. Please try again.');
-        document.getElementById('username').value = '';
-        document.getElementById('password').value = '';
-        return false;
+        alert('Invalid username or password.');
+        window.location.href = 'index.html';  // Redirect to home page
     }
 }
 
