@@ -105,4 +105,128 @@ const revealElement = (element, animationClass, delay = 0, interval = 0) => {
       revealElement(input, 'reveal-animation', 200 * index);
     });
   });
+
+// Lightbox functionality
+// Add this to your existing JavaScript file
+// Lightbox functionality
+function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = imageSrc;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scroll when lightbox is open
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scroll when lightbox is closed
+}
+
+// Close lightbox when clicking outside the image
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this || e.target.classList.contains('close-lightbox')) {
+        closeLightbox();
+    }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});
+
+// Prevent image click from closing lightbox
+document.getElementById('lightbox-img').addEventListener('click', function(e) {
+    e.stopPropagation();
+});
+
+// Scroll to top functionality
+const scrollBtn = document.querySelector('.scroll-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollBtn.classList.add('active');
+    } else {
+        scrollBtn.classList.remove('active');
+    }
+});
+
+scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Loading animation
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
+    setTimeout(() => {
+        loader.classList.add('fade-out');
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500);
+    }, 2000);
+});
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Product filter functionality
+const filterButtons = document.querySelectorAll('.filter-btn');
+const products = document.querySelectorAll('.product-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        products.forEach(product => {
+            const tag = product.querySelector('.product-card__tag').textContent.toLowerCase();
+            if (filter === 'all' || tag.includes(filter.toLowerCase())) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Add to your existing JavaScript
+document.addEventListener('DOMContentLoaded', () => {
+    // Timeline animation
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateX(0)';
+            }
+        });
+    }, observerOptions);
+
+    timelineItems.forEach(item => {
+        item.style.opacity = 0;
+        item.style.transform = 'translateX(-50px)';
+        item.style.transition = 'all 0.5s ease-out';
+        observer.observe(item);
+    });
+});
   

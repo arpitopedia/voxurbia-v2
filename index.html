@@ -14,10 +14,10 @@
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
-    <a href="https://www.instagram.com/voxurbia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="nav__logo">
-        <img src="voxlogo.png" alt="Voxurbia Logo" class="logo-img">
-    </a>
-</div>
+                    <a href="https://www.instagram.com/voxurbia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="nav__logo">
+                        <img src="voxlogo.png" alt="Voxurbia Logo" class="logo-img">
+                    </a>
+                </div>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
@@ -61,47 +61,97 @@
 
           <!--===== PRODUCT LISTING =====-->
 <section class="product-listing section" id="about">
-    <h2 class="section-title">Our Upcomming Products</h2>
+    <h2 class="section-title">Our Featured Products</h2>
 
     <div class="product-listing__container bd-grid">
         <!-- Product 1 -->
         <div class="product-card">
             <div class="product-card__img">
-                <img src="vox2.jpg" alt="Product 1">
+                <img src="vox2.jpg" alt="EternaVox VX-01E">
+                <span class="product-card__tag">New Arrival</span>
             </div>
             <div class="product-card__content">
                 <h3 class="product-card__title">EternaVox VX-01E</h3>
-                <p class="product-card__price">Comming soon</p>
-                <button class="product-card__btn">Notify Me</button>
+                <div class="product-card__details">
+                    <p class="product-card__description">Luxury automatic timepiece with sapphire crystal and 316L stainless steel case</p>
+                    <ul class="product-card__features">
+                        <li>Swiss Movement</li>
+                        <li>Water Resistant 100M</li>
+                        <li>42mm Case Diameter</li>
+                    </ul>
+                    <p class="product-card__price">
+                        <span class="price">$1,299.99</span>
+                        <span class="original-price">$1,499.99</span>
+                    </p>
+                </div>
+                <div class="product-card__actions">
+                    <button class="product-card__btn btn-notify">Notify When Available</button>
+                    <button class="product-card__btn btn-wishlist"><i class='bx bx-heart'></i></button>
+                </div>
             </div>
         </div>
 
         <!-- Product 2 -->
         <div class="product-card">
             <div class="product-card__img">
-                <img src="vox4.jpg" alt="Product 2">
+                <img src="vox4.jpg" alt="VoxCeleste VC-88S">
+                <span class="product-card__tag">Limited Edition</span>
             </div>
             <div class="product-card__content">
                 <h3 class="product-card__title">VoxCeleste VC-88S</h3>
-                <p class="product-card__price">Comming soon</p>
-                <button class="product-card__btn">Notify Me</button>
+                <div class="product-card__details">
+                    <p class="product-card__description">Premium chronograph with moonphase complication and leather strap</p>
+                    <ul class="product-card__features">
+                        <li>Chronograph Movement</li>
+                        <li>Genuine Leather Strap</li>
+                        <li>44mm Case Diameter</li>
+                    </ul>
+                    <p class="product-card__price">
+                        <span class="price">$899.99</span>
+                        <span class="original-price">$999.99</span>
+                    </p>
+                </div>
+                <div class="product-card__actions">
+                    <button class="product-card__btn btn-notify">Notify When Available</button>
+                    <button class="product-card__btn btn-wishlist"><i class='bx bx-heart'></i></button>
+                </div>
             </div>
         </div>
 
         <!-- Product 3 -->
         <div class="product-card">
             <div class="product-card__img">
-                <img src="vox5.jpg" alt="Product 3">
+                <img src="vox5.jpg" alt="ChronoVox CV-09P">
+                <span class="product-card__tag">Best Seller</span>
             </div>
             <div class="product-card__content">
                 <h3 class="product-card__title">ChronoVox CV-09P</h3>
-                <p class="product-card__price">Comming soon</p>
-                <button class="product-card__btn">Notify Me</button>
-                
+                <div class="product-card__details">
+                    <p class="product-card__description">Smart hybrid watch with traditional design and modern connectivity</p>
+                    <ul class="product-card__features">
+                        <li>Smart Notifications</li>
+                        <li>Activity Tracking</li>
+                        <li>6-Month Battery Life</li>
+                    </ul>
+                    <p class="product-card__price">
+                        <span class="price">$599.99</span>
+                        <span class="original-price">$699.99</span>
+                    </p>
+                </div>
+                <div class="product-card__actions">
+                    <button class="product-card__btn btn-notify">Notify When Available</button>
+                    <button class="product-card__btn btn-wishlist"><i class='bx bx-heart'></i></button>
+                </div>
             </div>
         </div>
+    </div>
 
-        <!-- Add more products as needed -->
+    <!-- Product Filters -->
+    <div class="product-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="new">New Arrivals</button>
+        <button class="filter-btn" data-filter="limited">Limited Edition</button>
+        <button class="filter-btn" data-filter="best">Best Sellers</button>
     </div>
 </section>
 <!--===== VOXURBIA - A Vision of Timeless Innovation and Excellence =====-->
@@ -221,5 +271,12 @@
 
         <!--===== MAIN JS =====-->
         <script src="ccc.js"></script>
+        <!-- Add after opening body tag -->
+                <div class="loader">
+                    <div class="loader-content">
+                        <img src="voxlogo.png" alt="Loading...">
+                        <div class="loading-bar"></div>
+                    </div>
+                </div>
     </body>
 </html>
