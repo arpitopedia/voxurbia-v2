@@ -3,59 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voxurbia Admin Dashboard</title>
-    <link rel="stylesheet" href="admin-style.css">
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <title>Admin Dashboard</title>
+    <script src="../scripts/login.js"></script>
+    <style>
+        .dashboard-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .content-section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
-<body>
-    <div class="admin-container">
-        <nav class="admin-sidebar">
-            <div class="sidebar-header">
-                <img src="../voxlogo.png" alt="Voxurbia Admin">
-                <h3>Admin Panel</h3>
-            </div>
-            <ul class="sidebar-menu">
-                <li><a href="#" class="active"><i class='bx bxs-dashboard'></i> Dashboard</a></li>
-                <li><a href="products.html"><i class='bx bxs-watch'></i> Products</a></li>
-                <li><a href="orders.html"><i class='bx bxs-cart'></i> Orders</a></li>
-                <li><a href="users.html"><i class='bx bxs-user'></i> Users</a></li>
-                <li><a href="messages.html"><i class='bx bxs-message'></i> Messages</a></li>
-                <li><a href="settings.html"><i class='bx bxs-cog'></i> Settings</a></li>
+<body onload="checkAdminAuth()">
+    <div class="dashboard-container">
+        <div class="header">
+            <h1>Admin Dashboard</h1>
+            <button onclick="logout()">Logout</button>
+        </div>
+        
+        <div class="content-section">
+            <h2>Welcome to Voxurbia Admin Panel</h2>
+            <p>Here you can manage your website content and settings.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>Quick Actions</h3>
+            <ul>
+                <li>Manage Content</li>
+                <li>View Statistics</li>
+                <li>User Management</li>
+                <li>Settings</li>
             </ul>
-        </nav>
-
-        <main class="admin-content">
-            <header class="content-header">
-                <h2>Dashboard</h2>
-                <div class="admin-profile">
-                    <span>Admin</span>
-                    <a href="logout.php" class="logout-btn"><i class='bx bx-log-out'></i></a>
-                </div>
-            </header>
-
-            <div class="dashboard-stats">
-                <div class="stat-card">
-                    <i class='bx bxs-watch'></i>
-                    <h3>Total Products</h3>
-                    <p>24</p>
-                </div>
-                <div class="stat-card">
-                    <i class='bx bxs-cart'></i>
-                    <h3>Total Orders</h3>
-                    <p>156</p>
-                </div>
-                <div class="stat-card">
-                    <i class='bx bxs-user'></i>
-                    <h3>Total Users</h3>
-                    <p>1,234</p>
-                </div>
-                <div class="stat-card">
-                    <i class='bx bxs-message'></i>
-                    <h3>Messages</h3>
-                    <p>18</p>
-                </div>
-            </div>
-        </main>
+        </div>
     </div>
 </body>
 </html>
