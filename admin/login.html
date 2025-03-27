@@ -6,7 +6,6 @@
     <title>Voxurbia Admin</title>
     <link rel="stylesheet" href="admin-style.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <script src="../scripts/login.js"></script>
 </head>
 <body>
     <div class="admin-login">
@@ -15,16 +14,14 @@
                 <img src="../voxlogo.png" alt="Voxurbia Admin" class="admin-logo">
                 <h2>Admin Portal</h2>
             </div>
-            <form id="loginForm" onsubmit="return validateLogin(event)" class="login-form">
+            <form action="auth.php" method="post" class="login-form">
                 <div class="form-group">
                     <i class='bx bxs-user'></i>
-                    <input type="text" id="username" placeholder="Username" required>
-                    <span class="focus-border"></span>
+                    <input type="text" name="username" placeholder="Username" required>
                 </div>
                 <div class="form-group">
                     <i class='bx bxs-lock-alt'></i>
-                    <input type="password" id="password" placeholder="Password" required>
-                    <span class="focus-border"></span>
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
                 <button type="submit" class="login-btn">
                     <span>Login</span>
@@ -33,10 +30,6 @@
             </form>
             <div class="login-footer">
                 <p>Voxurbia Administration</p>
-                <a href="../vox/index.html" class="back-link">
-                    <i class='bx bx-left-arrow-alt'></i>
-                    <span>Back to Website</span>
-                </a>
             </div>
         </div>
     </div>

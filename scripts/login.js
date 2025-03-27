@@ -6,21 +6,21 @@ function validateLogin(event) {
     
     if (username === 'admin' && password === 'Voxurbia@2024') {
         sessionStorage.setItem('isAdmin', 'true');
-        window.location.href = 'vox/admin/dashboard.html';  // Updated path
+        window.location.href = './vox/admin/dashboard.html';  // Fixed relative path
     } else {
         sessionStorage.setItem('isAdmin', 'false');
         alert('Invalid credentials');
-        window.location.href = 'index.html';  // Updated path
+        window.location.href = './index.html';  // Fixed relative path
     }
 }
 
 function checkAdminAuth() {
     if (sessionStorage.getItem('isAdmin') !== 'true') {
-        window.location.href = '/voxurbia-v2/login.html';  // Updated for GitHub Pages
+        window.location.href = './login.html';  // Fixed relative path
     }
 }
 
 function logout() {
     sessionStorage.removeItem('isAdmin');
-    window.location.href = '/voxurbia-v2/login.html';  // Updated for GitHub Pages
+    window.location.href = './login.html';  // Fixed relative path
 }
