@@ -6,11 +6,11 @@ function validateLogin(event) {
     
     if (username === 'admin' && password === 'Voxurbia@2024') {
         sessionStorage.setItem('isAdmin', 'true');
-        window.location.href = '/voxurbia-v2/vox/admin/dashboard.html';  // Updated for GitHub Pages
+        window.location.href = 'vox/admin/dashboard.html';  // Updated path
     } else {
         sessionStorage.setItem('isAdmin', 'false');
         alert('Invalid credentials');
-        window.location.href = '/voxurbia-v2/index.html';  // Updated for GitHub Pages
+        window.location.href = 'index.html';  // Updated path
     }
 }
 
